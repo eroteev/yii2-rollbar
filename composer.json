@@ -1,0 +1,27 @@
+{
+    "name": "eroteev/yii2-rollbar",
+    "description": "Rollbar logging for Yii2 framework",
+    "type": "yii2-extension",
+    "keywords": ["rollbar", "yii2", "yii", "log", "logging", "error", "warning", "debug"],
+    "license": "MIT",
+    "homepage": "http://github.com/eroteev/yii2-rollbar",
+    "authors": [
+        {
+            "name": "Stefan Eroteev",
+            "email": "eroteev@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1",
+        "yiisoft/yii2": "^2.0.13",
+        "rollbar/rollbar": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "eroteev\\rollbar\\": "src"
+        }
+    },
+    "support": {
+        "issues": "https://github.com/eroteev/yii2-rollbar/issues"
+    }
+}
