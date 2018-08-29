@@ -45,13 +45,12 @@ class RollbarTarget extends \yii\log\Target
     public function export()
     {
         foreach ($this->messages as $message) {
-            list($message, $level, $category, $timestamp, $traces, $memoryUsage) = $message;
+            list($message, $level, $category, $timestamp) = $message;
 
             Rollbar::log($this->getSeverityLevel($level), $message, [
                 'category' => $category,
                 'request_id' => $this->requestId,
                 'timestamp' => $timestamp,
-                'memory_usage' => $memoryUsage,
             ]);
         }
     }
