@@ -1,6 +1,6 @@
 Rollbar for Yii2
 ================
-Rollbar monitoring integration for Yii2 applications.
+Simplified rollbar monitoring integration for Yii2 applications.
 
 Installation
 ------------
@@ -8,7 +8,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 
  To install add
  ```
- "eroteev/yii2-rollbar": "0.1.*"
+ "eroteev/yii2-rollbar": "^1.0.0"
  ```
  to the `require` section of your `composer.json` file.
 
@@ -45,7 +45,7 @@ Setup instructions
  ],
  ```
 
-4. Add log target in your *main* config file:
+4. Add log target in your *global* config file:
  ```php
  'log' => [
      'targets' => [
