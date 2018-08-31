@@ -61,16 +61,6 @@ class Rollbar extends BaseObject implements BootstrapInterface
         }
     }
 
-    public function enable()
-    {
-        BaseRollbar::enable();
-    }
-
-    public function disable()
-    {
-        BaseRollbar::disable();
-    }
-
     /**
      * Send log to Rollbar
      *
