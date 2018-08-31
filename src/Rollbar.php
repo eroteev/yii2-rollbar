@@ -39,11 +39,19 @@ class Rollbar extends BaseObject implements BootstrapInterface
     {
         $this->setDefaults();
 
+        if (empty($this->config['enabled'])) {
+            return;
+        }
+
         BaseRollbar::init($this->config, false, false, false);
     }
 
     protected function setDefaults()
     {
+        if (!isset($this->config['enabled'])) {
+            $this->config['enabled'] = true;
+        }
+
         if (!isset($this->config['root'])) {
             $this->config['root'] = Yii::getAlias('@app');
         }
