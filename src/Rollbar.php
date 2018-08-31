@@ -39,30 +39,11 @@ class Rollbar extends BaseObject implements BootstrapInterface
     {
         $this->setDefaults();
 
-        if (!$this->isEnabled()) {
-            return;
-        }
-
         BaseRollbar::init($this->config, false, false, false);
     }
 
-    /**
-     * @return bool Returns true if the component is enabled, otherwise - false
-     */
-    protected function isEnabled()
-    {
-        return $this->config['enabled'];
-    }
-
-    /**
-     * Set default configuration options
-     */
     protected function setDefaults()
     {
-        if (!isset($this->config['enabled'])) {
-            $this->config['enabled'] = true;
-        }
-
         if (!isset($this->config['root'])) {
             $this->config['root'] = Yii::getAlias('@app');
         }
@@ -72,8 +53,18 @@ class Rollbar extends BaseObject implements BootstrapInterface
         }
     }
 
+    public function enable()
+    {
+        BaseRollbar::enable();
+    }
+
+    public function disable()
+    {
+        BaseRollbar::disable();
+    }
+
     /**
-     * Sends log to Rollbar
+     * Send log to Rollbar
      *
      * @param string $level Severity level as defined in Rollbar
      * @param mixed $toLog The thing to be logged (message, exception, error)
