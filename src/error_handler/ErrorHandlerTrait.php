@@ -19,10 +19,10 @@ trait ErrorHandlerTrait
 
     /**
      * Determine the severity level of the error
-     * @param \Exception $exception
+     * @param mixed $exception
      * @return string
      */
-    private function getSeverityLevel(\Exception $exception)
+    private function getSeverityLevel($exception)
     {
         if ($exception instanceof \Error
             || ($exception instanceof ErrorException && ErrorException::isFatalError(['type' => $exception->getSeverity()]))
